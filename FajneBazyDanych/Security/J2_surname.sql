@@ -1,0 +1,3 @@
+﻿CREATE SCHEMA [J2_surname]
+    AUTHORIZATION [dbo];
+
