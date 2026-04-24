@@ -72,6 +72,12 @@
     <Folder Include="dbo\User Defined Types\" />
     <Folder Include="Security\" />
     <Folder Include="SalesLT\Sequences\" />
+    <Folder Include="Student_2\Views\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="J2_surname\" />
+    <Folder Include="J2_surname\User Defined Types\" />
+    <Folder Include="SalesLT\XMLSchemaCollections\" />
+    <Folder Include="dbo\XMLSchemaCollections\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\BuildVersion.sql" />
@@ -83,7 +89,6 @@
     <Build Include="SalesLT\Tables\SalesOrderHeader.sql" />
     <Build Include="Student_2\Tables\ProduktyJ.sql" />
     <Build Include="dbo\Tables\ProductsCategories241442.sql" />
-    <Build Include="241442\Tables\Customer.sql" />
     <Build Include="dbo\Tables\ContactMessages.sql" />
     <Build Include="SalesLT\Tables\ProductModel.sql" />
     <Build Include="SalesLT\Tables\Vendor.sql" />
@@ -113,5 +118,17 @@
     <Build Include="Security\SalesLT.sql" />
     <Build Include="Security\Student_2.sql" />
     <Build Include="SalesLT\Sequences\SalesOrderNumber.sql" />
+    <Build Include="SalesLT\Tables\ProductAttribute.sql" />
+    <Build Include="dbo\Tables\temp_PriceUpdates.sql" />
+    <Build Include="241442\Tables\CustomersHistory.sql" />
+    <Build Include="241442\Tables\Customers.sql" />
+    <Build Include="Student_2\Views\MyLogicView.sql" />
+    <Build Include="dbo\Views\vProductPriceDifference.sql" />
+    <Build Include="dbo\Views\Student2_HighEndItems.sql" />
+    <Build Include="dbo\Views\241442_Order.sql" />
+    <Build Include="J2_surname\User Defined Types\SurnameType.sql" />
+    <Build Include="Security\J2_surname.sql" />
+    <Build Include="SalesLT\XMLSchemaCollections\ProductAttributeSchema.sql" />
+    <Build Include="dbo\XMLSchemaCollections\ProductAttributeSchema.sql" />
   </ItemGroup>
 </Project>
