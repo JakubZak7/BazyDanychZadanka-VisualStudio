@@ -29,8 +29,63 @@
 );
 
 
+
+
 GO
 CREATE NONCLUSTERED INDEX [IX_Product_ProductNumber_CategoryID]
     ON [SalesLT].[Product]([ProductNumber] ASC, [ProductCategoryID] ASC)
     INCLUDE([Name], [StandardCost]);
 
+
+GO
+Create trigger [SalesLT].trg_Prodcut_HighPriceIncrease on SalesLT.Product
+After update
+as
+begin
+	set nocount on
+
+	if update(ListPrice)
+	begin
+		if exists(
+			Select 1 from inserted i 
+			join deleted d on i.ProductID = d.ProductID
+			where i.ListPrice > d.ListPrice * 1.20
+		)
+		
+		Begin
+
+			Insert into SalesLT.PriceIncreaseLog (ProductID, OldPrice, AttemptedPrice)
+			Select i.ProductID, d.ListPrice, i.ListPrice from inserted i
+			join deleted d on d.ProductID = i.ProductID
+			where i.ListPrice > d.ListPrice * 1.20
+
+			update p
+			Set p.ListPrice = d.ListPrice from SalesLT.Product p
+			join deleted d on d.ProductID = p.ProductID
+			join inserted i on i.ProductID = p.ProductID
+			where i.ListPrice > d.ListPrice * 1.20
+			print ('TEST CZY DZIAŁA')
+
+		End
+	End
+End;
+GO
+Create trigger [SalesLT].trg_ListPriceChange
+on SalesLT.Product
+After update
+as
+begin
+	set nocount on
+	
+	if update(ListPrice)
+	begin
+		Insert into SalesLT.ProductPriceHistory (ProductID, OldPrice, NewPrice)
+		Select	
+			i.ProductID,
+			d.ListPrice,
+			i.ListPrice
+		from inserted i
+		join deleted d on d.ProductID = i.ProductID
+		where i.ListPrice <> d.ListPrice
+	end
+end
