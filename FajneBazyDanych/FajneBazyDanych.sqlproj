@@ -78,6 +78,9 @@
     <Folder Include="J2_surname\User Defined Types\" />
     <Folder Include="SalesLT\XMLSchemaCollections\" />
     <Folder Include="dbo\XMLSchemaCollections\" />
+    <Folder Include="Student_2\Functions\" />
+    <Folder Include="SalesLT\Functions\" />
+    <Folder Include="Database Triggers\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\BuildVersion.sql" />
@@ -130,5 +133,22 @@
     <Build Include="Security\J2_surname.sql" />
     <Build Include="SalesLT\XMLSchemaCollections\ProductAttributeSchema.sql" />
     <Build Include="dbo\XMLSchemaCollections\ProductAttributeSchema.sql" />
+    <Build Include="SalesLT\Tables\ProductReview.sql" />
+    <Build Include="SalesLT\Tables\ProductPriceHistory.sql" />
+    <Build Include="SalesLT\Tables\PriceIncreaseLog.sql" />
+    <Build Include="SalesLT\Tables\DeletedCustomersLog.sql" />
+    <Build Include="SalesLT\Tables\Customer.sql" />
+    <Build Include="dbo\Tables\DatabaseAuditLog.sql" />
+    <Build Include="dbo\Views\vw_RecentCustomers.sql" />
+    <Build Include="dbo\Views\vw_CustomerList.sql" />
+    <Build Include="dbo\Views\v_ProductCategoryTree.sql" />
+    <Build Include="Student_2\Functions\ufn_ProductJsonByCategory.sql" />
+    <Build Include="Student_2\Functions\ufn_IsPriceHigherThanCurrent.sql" />
+    <Build Include="SalesLT\Functions\BestRecord.sql" />
+    <Build Include="dbo\Functions\fn_GetCustomerCreditRisk.sql" />
+    <Build Include="dbo\Functions\fn_FormatCustomerAndComapny.sql" />
+    <Build Include="dbo\Functions\fn_GetCategoryHierarchy.sql" />
+    <Build Include="Student_2\Functions\ufn_CheckMultipleProductsPrices.sql" />
+    <Build Include="Database Triggers\tgr_AuditLogTableChange.sql" />
   </ItemGroup>
 </Project>
